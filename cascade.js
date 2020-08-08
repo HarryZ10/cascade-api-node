@@ -158,6 +158,11 @@ class Cascade
         return await this.APICall("read","file",path);
     }
 
+    async readFolder(path)
+    {
+        return await this.APICall("read","folder",path);
+    }
+
     async deletePage(path)
     {
         return await this.APICall("delete","page",path);
@@ -166,6 +171,11 @@ class Cascade
     async deleteFile(path)
     {
         return await this.APICall("delete","file",path);
+    }
+
+    async deleteFolder(path)
+    {
+        return await this.APICall("delete","folder",path);
     }
 
     async editPage(assetObject)
@@ -178,6 +188,11 @@ class Cascade
         return await this.APICall("edit","file",assetObject.path,{file: assetObject});
     }
 
+    async editFolder(assetObject)
+    {
+        return await this.APICall("edit","folder",assetObject.path,{folder: assetObject});
+    }
+
     async publishPage(path)
     {
         return await this.APICall("publish","page",path);
@@ -186,6 +201,11 @@ class Cascade
     async publishFile(path)
     {
         return await this.APICall("publish","file",path);
+    }
+
+    async publishFolder(path)
+    {
+        return await this.APICall("publish","folder",path);
     }
 
     async createPage(assetObject)
@@ -198,6 +218,10 @@ class Cascade
         return await this.APICall("create",false,false,{file: assetObject});
     }
 
+    async createFolder(assetObject)
+    {
+        return await this.APICall("create",false,false,{folder: assetObject});
+    }
 }
 
 /**
